@@ -14,3 +14,7 @@ Besides the application and domainn layers we have the API, which receives the r
 **Tests**
 
 To run the tests simply run dotnet test.
+
+**Run Project**
+Inside filder Multiples.Api, which contains the API project, execute dotnet run.
+The url http://localhost:5000/swagger contains the path to the swagger, where is the API documentation and where you're able to execute requests.

@@ -80,11 +80,6 @@ namespace Multiples.Api
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "Multiples of Eleven");
             });
 
-            // app.Run(context => {
-            //     context.Response.Redirect("swagger");
-            //     return Task.CompletedTask;
-            // });
-
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
