@@ -4,6 +4,6 @@ namespace Multiples.App.Queries.Dto
 {
     public class CheckMultiplesNumberListQuery : IQuery
     {
-        public List<string> NumbersToTest { get; set; }
+        public List<string> Numbers { get; set; }
     }
 }

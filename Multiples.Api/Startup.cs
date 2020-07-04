@@ -12,6 +12,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Multiples.App.Queries.Dto;
 using Multiples.App.Queries.Handlers;
+using Multiples.Domain.Services;
 
 namespace Multiples.Api
 {
@@ -27,13 +28,17 @@ namespace Multiples.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
+            services.AddControllers().AddNewtonsoftJson(options =>
+                options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+            );
+
             DependencyInjection(services);
         }
 
         private static void DependencyInjection(IServiceCollection services)
         {
             services.AddTransient<IQueryHandler<CheckMultiplesNumberListQuery, CheckMultiplesNumberListQueryResult>, CheckMultiplesNumberListQueryHandler>();
+            services.AddTransient<MultiplesCheckerService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -44,7 +49,7 @@ namespace Multiples.Api
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseHttpsRedirection();
+            // app.UseHttpsRedirection();
 
             app.UseRouting();
 

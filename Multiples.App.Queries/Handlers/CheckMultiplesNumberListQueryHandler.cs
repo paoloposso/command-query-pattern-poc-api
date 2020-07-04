@@ -15,11 +15,11 @@ namespace Multiples.App.Queries.Handlers
 
         public CheckMultiplesNumberListQueryResult Handle(CheckMultiplesNumberListQuery query)
         {
-            query.NumbersToTest.ForEach(number => {
+            query.Numbers.ForEach(number => {
                 Validate(number);
             });
-            
-            var ret = _multiplesCheckerService.CheckMultiples(query.NumbersToTest);
+
+            var ret = _multiplesCheckerService.CheckMultiples(query.Numbers);
 
             return new CheckMultiplesNumberListQueryResult{
                 NumberResults = ret
