@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Multiples.Domain.Services",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Multiples.Tests", "Multiples.Tests\Multiples.Tests.csproj", "{EE686E7C-D155-4AA1-9B65-8A4985AEB720}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Multiples.Api", "Multiples.Api\Multiples.Api.csproj", "{38EF4348-833B-407F-AC87-92A170504C3B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -84,5 +86,17 @@ Global
 		{EE686E7C-D155-4AA1-9B65-8A4985AEB720}.Release|x64.Build.0 = Release|Any CPU
 		{EE686E7C-D155-4AA1-9B65-8A4985AEB720}.Release|x86.ActiveCfg = Release|Any CPU
 		{EE686E7C-D155-4AA1-9B65-8A4985AEB720}.Release|x86.Build.0 = Release|Any CPU
+		{38EF4348-833B-407F-AC87-92A170504C3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38EF4348-833B-407F-AC87-92A170504C3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38EF4348-833B-407F-AC87-92A170504C3B}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{38EF4348-833B-407F-AC87-92A170504C3B}.Debug|x64.Build.0 = Debug|Any CPU
+		{38EF4348-833B-407F-AC87-92A170504C3B}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{38EF4348-833B-407F-AC87-92A170504C3B}.Debug|x86.Build.0 = Debug|Any CPU
+		{38EF4348-833B-407F-AC87-92A170504C3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38EF4348-833B-407F-AC87-92A170504C3B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38EF4348-833B-407F-AC87-92A170504C3B}.Release|x64.ActiveCfg = Release|Any CPU
+		{38EF4348-833B-407F-AC87-92A170504C3B}.Release|x64.Build.0 = Release|Any CPU
+		{38EF4348-833B-407F-AC87-92A170504C3B}.Release|x86.ActiveCfg = Release|Any CPU
+		{38EF4348-833B-407F-AC87-92A170504C3B}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

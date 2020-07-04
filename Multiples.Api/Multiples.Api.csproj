@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <ItemGroup>
+    <ProjectReference Include="..\Multiples.Domain.Entities\Multiples.Domain.Entities.csproj" />
+    <ProjectReference Include="..\Multiples.Domain.Services\Multiples.Domain.Services.csproj" />
+    <ProjectReference Include="..\Multiples.App.Queries\Multiples.App.Queries.csproj" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+
+</Project>

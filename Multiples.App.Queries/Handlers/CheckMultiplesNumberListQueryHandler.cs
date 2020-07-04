@@ -1,3 +1,5 @@
+using System;
+using System.Linq;
 using Multiples.App.Queries.Dto;
 using Multiples.Domain.Services;
 
@@ -13,11 +15,23 @@ namespace Multiples.App.Queries.Handlers
 
         public CheckMultiplesNumberListQueryResult Handle(CheckMultiplesNumberListQuery query)
         {
+            query.NumbersToTest.ForEach(number => {
+                Validate(number);
+            });
+            
             var ret = _multiplesCheckerService.CheckMultiples(query.NumbersToTest);
 
             return new CheckMultiplesNumberListQueryResult{
                 NumberResults = ret
             };
+        }
+
+        private void Validate(string query)
+        {
+            if(!query.All(char.IsDigit))
+            {
+                throw new ArgumentException("All the items must be numeric");
+            }
         }
     }
 }
