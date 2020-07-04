@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using Multiples.App.Queries.Handlers;
+using Multiples.App.Queries;
 using Multiples.App.Queries.Dto;
 
 namespace Multiples.Api.Controllers
@@ -13,14 +13,13 @@ namespace Multiples.Api.Controllers
     [Route("[controller]")]
     public class MultiplesController : ControllerBase
     {
-        private readonly ILogger<WeatherForecastController> _logger;
-        private readonly IQueryHandler<CheckMultiplesNumberListQuery, CheckMultiplesNumberListQueryResult> _checkMultiplesNumberListQuery;
+        private readonly ILogger<MultiplesController> _logger;
+        private readonly IQueryBus _queryBus;
 
-        public MultiplesController(ILogger<WeatherForecastController> logger, 
-            IQueryHandler<CheckMultiplesNumberListQuery, CheckMultiplesNumberListQueryResult> checkMultiplesNumberListQuery)
+        public MultiplesController(ILogger<MultiplesController> logger, IQueryBus queryBus)
         {
             _logger = logger;
-            _checkMultiplesNumberListQuery = checkMultiplesNumberListQuery;
+            _queryBus = queryBus;
         }
 
         [HttpPost]
@@ -28,7 +27,7 @@ namespace Multiples.Api.Controllers
         {
             try
             {
-                return Ok(_checkMultiplesNumberListQuery.Handle(query));
+                return Ok(_queryBus.Execute(query));
             }
             catch (ArgumentException ex)
             {

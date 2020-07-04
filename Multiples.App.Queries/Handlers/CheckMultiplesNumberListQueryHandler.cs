@@ -5,7 +5,7 @@ using Multiples.Domain.Services;
 
 namespace Multiples.App.Queries.Handlers
 {
-    public class CheckMultiplesNumberListQueryHandler : IQueryHandler<CheckMultiplesNumberListQuery, CheckMultiplesNumberListQueryResult>
+    public class CheckMultiplesNumberListQueryHandler : IQueryHandler<CheckMultiplesNumberListQuery>
     {
         private readonly MultiplesCheckerService _multiplesCheckerService;
         public CheckMultiplesNumberListQueryHandler(MultiplesCheckerService multiplesCheckerService)
@@ -13,7 +13,7 @@ namespace Multiples.App.Queries.Handlers
             _multiplesCheckerService = multiplesCheckerService;
         }
 
-        public CheckMultiplesNumberListQueryResult Handle(CheckMultiplesNumberListQuery query)
+        public IQueryResult Handle(CheckMultiplesNumberListQuery query)
         {
             query.Numbers.ForEach(number => {
                 Validate(number);

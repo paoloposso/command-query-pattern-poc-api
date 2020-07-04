@@ -2,9 +2,9 @@ using Multiples.App.Queries.Dto;
 
 namespace Multiples.App.Queries.Handlers
 {
-    public interface IQueryHandler<TQuery, TQueryResult>
-        where TQuery : IQuery where TQueryResult : IQueryResult
+    public interface IQueryHandler<TQuery>
+        where TQuery : IQuery
     {
-         TQueryResult Handle(TQuery query);
+         IQueryResult Handle(TQuery query);
     }
 }
