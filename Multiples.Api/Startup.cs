@@ -14,7 +14,9 @@ using Microsoft.Extensions.Logging;
 using Multiples.App.Queries;
 using Multiples.App.Queries.Dto;
 using Multiples.App.Queries.Handlers;
+using Multiples.Domain.Repositories;
 using Multiples.Domain.Services;
+using Multiples.Infrastructure.Repositories;
 using Swashbuckle.AspNetCore.Swagger;
 
 namespace Multiples.Api
@@ -59,6 +61,8 @@ namespace Multiples.Api
             services.AddTransient<IQueryHandler<CheckMultiplesNumberListQuery>, CheckMultiplesNumberListQueryHandler>();
             services.AddTransient<MultiplesCheckerService>();
             services.AddTransient<IQueryBus, DefaultQueryBus>();
+
+            services.AddTransient<IUserRepository, UserRepository>();
 
             services.AddSingleton<IServiceProvider>(prov => services.BuildServiceProvider());
         }

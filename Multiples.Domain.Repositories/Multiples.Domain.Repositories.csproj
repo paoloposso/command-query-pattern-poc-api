@@ -2,7 +2,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Multiples.Domain.Entities\Multiples.Domain.Entities.csproj" />
-    <ProjectReference Include="..\Multiples.Domain.Repositories\Multiples.Domain.Repositories.csproj" />
   </ItemGroup>
 
   <PropertyGroup>
